@@ -2,7 +2,7 @@ const firebaseAuth = require('firebase/auth');
 const {auth} = require('./../services/firebaseService');
 
 module.exports = {
-    post : (req, res) => {
+    post: (req, res) => {
         const receivedData = req.body;
         const email = receivedData.email;
         const password = receivedData.password;
