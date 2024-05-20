@@ -9,12 +9,15 @@ module.exports = {
         firebaseAuth.signInWithEmailAndPassword(auth, email, password)
             .then(()=>{
                 console.log("Signed in successfully.");
-                res.send("Signed in successfully.");
-                res.send("User: "+email+" "+password+" ")
+                res.send("User: "+email+" "+password+" signed in successfully.")
             })
             .catch((error)=>{
                 if (error.code === "auth/invalid-credential"){
+                    console.log("Invalid credentials.");
                     res.send("Invalid credentials.")
+                } else if (error.code === "auth/user-disabled"){
+                    console.log("User disabled.");
+                    res.send("User disabled.")
                 } else {
                     console.log(error);
                 }

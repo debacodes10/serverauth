@@ -15,6 +15,17 @@ module.exports = {
                 if (error.code === "auth/email-already-in-use"){
                     console.log("Email already in use");
                     res.send("Email already in use.")
+                } else if (error.code === "auth/weak-password"){
+                    console.log("Password is too weak");
+                    res.send("Password is too weak.")
+                } else if (error.code==="auth/invalid-email"){
+                    console.log("Invalid Email.");
+                    res.send("Invalid Email.")
+                } else if (error.code==="auth/operaion-not-allowed"){
+                    console.log("Operation not allowed");
+                    res.send("Operation not allowed")
+                } else {
+                    console.log(error);
                 }
             })
     }
