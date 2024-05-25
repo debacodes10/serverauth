@@ -5,6 +5,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+    script(src="/js/googleAuth.js" type="module")
     style.
       body {
         font-family: Arial, sans-serif;
@@ -22,13 +23,12 @@ html(lang="en")
         font-size: 16px;
         cursor: pointer;
       }
-    script(type="module").
-      import { signInWithGoogle } from './../public/js/googleAuth.js';
-
+    script.
       function googleLogin() {
+        console.log("Clicked")
         signInWithGoogle();
       }
   body
     .login-container
       h1= pageTitle
-      a.login-button(href="/googlesignin") Login
+      a.login-button(href="javascript:void(0)" onclick="googleLogin()") Login

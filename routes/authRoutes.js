@@ -7,12 +7,12 @@ const registerController = require("../controllers/registerController");
 const signinController = require("../controllers/signinController");
 
 // Define the route for user registration
-// This route handles POST requests to /register
+// This route handles POST requests to /userAuth/register
 // The logic for registration is handled by the post method in registerController
 router.post("/register", registerController.post);
 
 // Define the route for user sign-in
-// This route handles POST requests to /signin
+// This route handles POST requests to /userAuth/signin
 // The logic for sign-in is handled by the post method in signinController
 router.post("/signin", signinController.post);
 
